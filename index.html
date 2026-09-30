@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Corretivo capilar para reduzir visualmente a aparência de falhas e do couro cabeludo aparente. Escolha seu tom e seu kit.">
 <title>Corretivo Capilar | Falha Zero Produtos Capilares</title>
+
+<script>
+const META_PIXEL_ID = ""; // Coloque aqui o número do seu Pixel Meta
+
+if (/^\d{10,20}$/.test(META_PIXEL_ID)) {
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;
+    n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+</script>
+
 <style>
 :root{--bg:#faf7f2;--surface:#fff;--soft:#f1e8dd;--text:#241c18;--muted:#665b55;--accent:#8a462c;--accent-dark:#68331f;--line:#e6dcd1;--radius:18px}
 *{box-sizing:border-box}
@@ -106,6 +125,7 @@ p{margin-top:0}
 @media(max-width:580px){.section{padding:53px 0}.wrap{width:min(100% - 28px,1160px)}.benefit-grid,.offer-grid,.results-grid,.tones,.form-grid,#color-fields{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:20px}.header-link{font-size:.78rem}.result-card img{height:auto;aspect-ratio:auto}.reviews-grid{grid-template-columns:1fr;gap:16px}.review-card{padding:20px}}
 </style>
 </head>
+
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
@@ -113,6 +133,7 @@ p{margin-top:0}
     <a class="header-link" href="#ofertas">Ver ofertas</a>
   </div>
 </header>
+
 <main id="inicio">
   <section class="hero">
     <div class="wrap hero-grid">
@@ -164,29 +185,52 @@ p{margin-top:0}
         <h2 id="reviews-title">O que dizem sobre o corretivo.</h2>
         <p class="muted">Avaliações de clientes com fotos do produto e dos resultados.</p>
       </div>
-      <div class="reviews-grid">
+
+      <div class="reviews-grid" style="--review-image:url(data:image/avif;base64,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)">
         <blockquote class="review-card">
           <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
           <p>“Produto muito bom, já comprei e testei... não sai fácil. Resultado top demais.”</p>
-          <div class="review-media two-photos" data-review="0"></div>
+          <div class="review-media two-photos">
+            <span class="review-photo" role="img" aria-label="Antes da aplicação" style="--photo-position:0% 0%"></span>
+            <span class="review-photo" role="img" aria-label="Depois da aplicação" style="--photo-position:50% 0%"></span>
+          </div>
           <footer><strong>Tiago P.</strong><span>Preto</span></footer>
         </blockquote>
+
         <blockquote class="review-card">
           <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
           <p>“Muito bom! Adorei. Cobertura: incrível. Benefício do produto: ajuda muito.”</p>
-          <div class="review-media" data-review="1"></div>
+          <div class="review-media">
+            <span class="review-photo" role="img" aria-label="Caixa do produto" style="--photo-position:100% 0%"></span>
+            <span class="review-photo" role="img" aria-label="Pote do corretivo" style="--photo-position:0% 25%"></span>
+            <span class="review-photo" role="img" aria-label="Produto aberto" style="--photo-position:50% 25%"></span>
+            <span class="review-photo" role="img" aria-label="Aplicador" style="--photo-position:100% 25%"></span>
+          </div>
           <footer><strong>Eduardo O.</strong><span>Castanho escuro</span></footer>
         </blockquote>
+
         <blockquote class="review-card">
           <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
           <p>“Muito bom gostei, prático e cobre bem as falhas na cabeça.”</p>
-          <div class="review-media" data-review="2"></div>
+          <div class="review-media">
+            <span class="review-photo" role="img" aria-label="Imagem enviada pelo cliente" style="--photo-position:0% 50%"></span>
+            <span class="review-photo" role="img" aria-label="Etiqueta da caixa" style="--photo-position:50% 50%"></span>
+            <span class="review-photo" role="img" aria-label="Caixa do produto" style="--photo-position:100% 50%"></span>
+            <span class="review-photo" role="img" aria-label="Pote do corretivo" style="--photo-position:0% 75%"></span>
+          </div>
           <footer><strong>Luana S.</strong><span>Preto</span></footer>
         </blockquote>
+
         <blockquote class="review-card">
           <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
           <p>“Satisfeito! Atendeu minhas expectativas. É exatamente como descrito no site e cumpre o que promete. O material é de boa qualidade, com bom acabamento e cobertura, porém errei no tom da cor do cabelo. Recomendo!”</p>
-          <div class="review-media" data-review="3"></div>
+          <div class="review-media">
+            <span class="review-photo" role="img" aria-label="Aplicador" style="--photo-position:50% 75%"></span>
+            <span class="review-photo" role="img" aria-label="Caixa recebida" style="--photo-position:100% 75%"></span>
+            <span class="review-photo" role="img" aria-label="Corretivo aberto" style="--photo-position:0% 100%"></span>
+            <span class="review-photo" role="img" aria-label="Pote e aplicador" style="--photo-position:50% 100%"></span>
+            <span class="review-photo" role="img" aria-label="Foto do cabelo" style="--photo-position:100% 100%"></span>
+          </div>
           <footer><strong>André F.</strong><span>Castanho escuro</span></footer>
         </blockquote>
       </div>
@@ -289,13 +333,18 @@ p{margin-top:0}
     </div>
   </section>
 </main>
-<footer class="site-footer"><div class="wrap">Falha Zero Produtos Capilares · Produto: Corretivo Capilar</div></footer>
+
+<footer class="site-footer">
+  <div class="wrap">Falha Zero Produtos Capilares · Produto: Corretivo Capilar</div>
+</footer>
+
 <script>
 const OFFERS={
   individual:{name:"1 unidade · R$ 27,90",quantity:1,checkout:"https://pagseguropix.org/c/corretivo-capilar-indi"},
   kit3:{name:"3 unidades · R$ 57,90",quantity:3,checkout:"https://pagseguropix.org/c/compre-dois-leve-um-gratis"},
   kit5:{name:"5 unidades · R$ 87,90",quantity:5,checkout:"https://pagseguropix.org/c/oferta-compre-3-e-leve-2-gratis"}
 };
+
 let selectedKit="kit3";
 const colorFields=document.getElementById("color-fields");
 const kitName=document.getElementById("selected-kit-name");
@@ -314,79 +363,94 @@ function renderColors(quantity){
     select.id=`cor-${i}`;
     select.name=`cor-${i}`;
     select.required=true;
-    [["","Selecione a cor"],["preto","Preto"],["castanho-escuro","Castanho-escuro"],["castanho-claro","Castanho-claro"]]
+
+    [["","Selecione a cor"],["preto","Preto"],["castanho-escuro","Castanho-escuro"],["castanho-claro"]]
       .forEach(([value,text])=>{
         const option=document.createElement("option");
         option.value=value;
         option.textContent=text;
         select.appendChild(option);
       });
+
     field.append(label,select);
     colorFields.appendChild(field);
   }
 }
+
 function chooseKit(id,scrollToForm=false){
   if(!Object.hasOwn(OFFERS,id))return;
   selectedKit=id;
   kitName.textContent=OFFERS[id].name;
   renderColors(OFFERS[id].quantity);
+
   document.querySelectorAll("[data-offer-card]").forEach(card=>{
     card.classList.toggle("selected",card.dataset.offerCard===id);
   });
-  if(scrollToForm)document.getElementById("pedido").scrollIntoView({behavior:"smooth",block:"start"});
+
+  if(scrollToForm){
+    document.getElementById("pedido").scrollIntoView({behavior:"smooth",block:"start"});
+  }
 }
+
 document.querySelectorAll("[data-select-kit]").forEach(button=>{
   button.addEventListener("click",()=>chooseKit(button.dataset.selectKit,true));
 });
+
 cep.addEventListener("input",()=>{
   const digits=cep.value.replace(/\D/g,"").slice(0,8);
   cep.value=digits.length>5?`${digits.slice(0,5)}-${digits.slice(5)}`:digits;
 });
+
 document.getElementById("estado").addEventListener("input",event=>{
   event.target.value=event.target.value.replace(/[^a-zA-Z]/g,"").slice(0,2).toUpperCase();
 });
+
 form.addEventListener("submit",event=>{
   event.preventDefault();
   if(!form.reportValidity())return;
+
   const target=new URL(OFFERS[selectedKit].checkout);
-  if(target.protocol!=="https:"){alert("Não foi possível abrir o checkout.");return}
-  window.location.assign(target.href);
+  if(target.protocol!=="https:"){
+    alert("Não foi possível abrir o checkout.");
+    return;
+  }
+
+  const pixelReady=typeof window.fbq==="function";
+  if(pixelReady){
+    window.fbq("track","InitiateCheckout");
+  }
+
+  setTimeout(
+    ()=>window.location.assign(target.href),
+    pixelReady?180:0
+  );
 });
+
 const vslVideo=document.getElementById("vsl-video");
 const vslSource=vslVideo.querySelector("source");
 const vslStart=document.getElementById("vsl-start");
 const vslStatus=document.getElementById("vsl-status");
+
 vslStart.addEventListener("click",async()=>{
   vslStart.disabled=true;
   vslStatus.textContent="Carregando vídeo...";
   if(!vslSource.src)vslSource.src=vslSource.dataset.src;
   vslVideo.load();
-  try{await vslVideo.play()}
-  catch(error){vslStatus.textContent="Não foi possível carregar. Tente novamente.";vslStart.disabled=false}
+
+  try{
+    await vslVideo.play();
+  }catch(error){
+    vslStatus.textContent="Não foi possível carregar. Tente novamente.";
+    vslStart.disabled=false;
+  }
 });
+
 vslVideo.addEventListener("playing",()=>{
   vslStart.hidden=true;
   vslVideo.controls=true;
 });
-chooseKit("kit3");
 
-/* Fotos das avaliações incorporadas ao próprio HTML. */
-const fotos=[
-  ["https://i.imgur.com/DMBkoVw.jpeg","https://i.imgur.com/FeXtGo8.jpeg"],
-  ["https://i.imgur.com/CydcN25.jpeg","https://i.imgur.com/UTxfLTN.jpeg"],
-  ["https://i.imgur.com/DMBkoVw.jpeg","https://i.imgur.com/FeXtGo8.jpeg"],
-  ["https://i.imgur.com/CydcN25.jpeg","https://i.imgur.com/UTxfLTN.jpeg"]
-];
-document.querySelectorAll(".review-media").forEach((gallery,index)=>{
-  fotos[index].forEach((url,photoIndex)=>{
-    const img=document.createElement("img");
-    img.src=url;
-    img.alt=`Foto enviada na avaliação ${index+1}, imagem ${photoIndex+1}`;
-    img.loading="lazy";
-    img.style.cssText="width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid #e6dcd1";
-    gallery.appendChild(img);
-  });
-});
+chooseKit("kit3");
 </script>
 </body>
 </html>
