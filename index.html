@@ -1,882 +1,392 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Corretivo capilar para reduzir visualmente a aparência de falhas e do couro cabeludo aparente. Escolha seu tom e seu kit.">
-  <title>Corretivo Capilar | Falha Zero Produtos Capilares</title>
-  <style>
-    :root {
-      --bg: #faf7f2;
-      --surface: #ffffff;
-      --soft: #f1e8dd;
-      --text: #241c18;
-      --muted: #665b55;
-      --accent: #8a462c;
-      --accent-dark: #68331f;
-      --line: #e6dcd1;
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      font: 16px/1.6 Arial, Helvetica, sans-serif;
-    }
-    button, input, select { font: inherit; }
-    img { max-width: 100%; }
-    a { color: inherit; }
-    [hidden] { display: none !important; }
-    .wrap {
-      width: min(1160px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-    .section { padding: 76px 0; }
-    .eyebrow {
-      display: block;
-      margin-bottom: 12px;
-      color: var(--accent);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3 {
-      line-height: 1.12;
-      letter-spacing: -.035em;
-    }
-    h1, h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-    }
-    h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2.6rem, 6vw, 5.2rem);
-    }
-    h2 {
-      margin: 0 0 17px;
-      font-size: clamp(2.1rem, 4vw, 3.4rem);
-    }
-    h3 { margin: 0 0 10px; font-size: 1.25rem; }
-    p { margin-top: 0; }
-    .muted { color: var(--muted); }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 13px 24px;
-      border: 1px solid var(--accent);
-      border-radius: 10px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 800;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background .2s, transform .2s;
-    }
-    .btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-    }
-    .btn:focus-visible, a:focus-visible,
-    input:focus-visible, select:focus-visible {
-      outline: 3px solid #ba7a54;
-      outline-offset: 3px;
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--accent);
-    }
-    .btn-outline:hover { color: #fff; }
-    .site-header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(250, 247, 242, .96);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 74px;
-    }
-    .brand {
-      font-family: Georgia, serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font: 700 .68rem Arial, sans-serif;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-    .header-link {
-      color: var(--accent);
-      font-size: .9rem;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .hero {
-      padding: 76px 0 82px;
-      background: linear-gradient(145deg, #f8f2e9, #eee2d4);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(30px, 6vw, 80px);
-    }
-    .hero-copy > p {
-      max-width: 550px;
-      color: #51463f;
-      font-size: 1.1rem;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 28px 0;
-    }
-    .hero-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .hero-facts span {
-      padding: 7px 11px;
-      border: 1px solid #d8c6b5;
-      border-radius: 100px;
-      color: #55453b;
-      font-size: .82rem;
-    }
-    .video-card {
-      padding: 14px;
-      border: 1px solid #e0d3c5;
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: 0 20px 50px #50341d1a;
-    }
-    .video-card video {
-      display: block;
-      width: 100%;
-      max-height: 620px;
-      border-radius: 12px;
-      background: #191919;
-    }
-    .video-card p {
-      margin: 13px 5px 2px;
-      color: var(--muted);
-      font-size: .85rem;
-      text-align: center;
-    }
-    .video-card a { color: var(--accent); font-weight: 700; }
-    .vsl-frame { position: relative; }
-    .vsl-start {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      width: 100%;
-      border: 0;
-      border-radius: 12px;
-      background: linear-gradient(180deg, #0000 55%, #0009);
-      color: #fff;
-      font-weight: 800;
-      cursor: pointer;
-      text-shadow: 0 1px 6px #000;
-    }
-    .vsl-start[hidden] { display: none; }
-    .vsl-start:disabled { cursor: progress; }
-    .vsl-play {
-      display: grid;
-      place-items: center;
-      width: 68px;
-      height: 68px;
-      padding-left: 4px;
-      border-radius: 50%;
-      background: var(--surface);
-      color: var(--accent);
-      font-size: 1.6rem;
-      line-height: 1;
-      text-shadow: none;
-      box-shadow: 0 10px 30px #0007;
-    }
-    #vsl-status {
-      position: absolute;
-      right: 15px;
-      bottom: 21px;
-      left: 15px;
-      text-align: center;
-    }
-    .section-heading {
-      max-width: 750px;
-      margin: 0 auto 35px;
-      text-align: center;
-    }
-    .benefit-grid, .offer-grid, .results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .benefit-card, .offer-card, .result-card, .form-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-    .benefit-card { padding: 27px; }
-    .benefit-card p { margin-bottom: 0; color: var(--muted); }
-    .benefit-number {
-      display: block;
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-family: Georgia, serif;
-      font-size: 2rem;
-    }
-    .results-section { background: var(--soft); }
-    .result-card {
-      overflow: hidden;
-      margin: 0;
-    }
-    .result-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      background: #e6e0d8;
-    }
-    .result-card figcaption {
-      padding: 13px 15px 16px;
-      font-size: .9rem;
-      font-weight: 700;
-    }
-    .results-note {
-      max-width: 780px;
-      margin: 24px auto 0;
-      color: var(--muted);
-      font-size: .9rem;
-      text-align: center;
-    }
-    .tones {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-      margin-top: 28px;
-    }
-    .tone {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      font-weight: 700;
-    }
-    .tone-dot {
-      width: 31px;
-      height: 31px;
-      flex: 0 0 auto;
-      border: 1px solid #0002;
-      border-radius: 50%;
-    }
-    .offers-section { background: #eee3d6; }
-    .offer-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 27px;
-    }
-    .offer-card.featured { border: 2px solid var(--accent); }
-    .offer-card.selected {
-      box-shadow: 0 0 0 3px #8a462c32;
-    }
-    .offer-badge {
-      align-self: flex-start;
-      margin-bottom: 17px;
-      padding: 5px 10px;
-      border-radius: 100px;
-      background: var(--accent);
-      color: #fff;
-      font-size: .73rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-    .offer-card h3 { font-size: 1.45rem; }
-    .offer-price {
-      margin: 10px 0 2px;
-      color: var(--accent-dark);
-      font-size: 2.4rem;
-      font-weight: 800;
-      line-height: 1.1;
-    }
-    .offer-detail {
-      margin: 8px 0 22px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .offer-card .btn {
-      width: 100%;
-      margin-top: auto;
-    }
-    .order-layout {
-      display: grid;
-      grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr);
-      align-items: start;
-      gap: 28px;
-    }
-    .order-summary {
-      padding: 26px;
-      border-radius: var(--radius);
-      background: #30241f;
-      color: #fff;
-    }
-    .order-summary p { color: #ddd0c8; }
-    .order-summary strong {
-      display: block;
-      margin: 13px 0;
-      font-size: 1.6rem;
-    }
-    .form-card { padding: 29px; }
-    .form-card fieldset {
-      margin: 0 0 25px;
-      padding: 0;
-      border: 0;
-    }
-    .form-card legend {
-      margin-bottom: 16px;
-      font-size: 1.17rem;
-      font-weight: 800;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-    }
-    .field { display: flex; flex-direction: column; gap: 6px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label {
-      font-size: .9rem;
-      font-weight: 700;
-    }
-    .field input, .field select {
-      width: 100%;
-      min-height: 47px;
-      padding: 10px 12px;
-      border: 1px solid #bdb1a7;
-      border-radius: 8px;
-      background: #fff;
-      color: var(--text);
-    }
-    #color-fields {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-    }
-    .form-card .btn { width: 100%; }
-    .form-note {
-      margin: 13px 0 0;
-      color: var(--muted);
-      font-size: .86rem;
-    }
-    .faq { background: #f2ece5; }
-    .faq-list {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .faq-list details {
-      padding: 18px 0;
-      border-bottom: 1px solid #d8cbc0;
-    }
-    .faq-list summary {
-      font-weight: 800;
-      cursor: pointer;
-    }
-    .faq-list p { margin: 13px 0 0; color: var(--muted); }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .review-card {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-height: 215px;
-      margin: 0;
-      padding: 27px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-    .review-stars {
-      color: #bb7b20;
-      font-size: 1.12rem;
-      letter-spacing: .12em;
-      line-height: 1;
-    }
-    .review-card p { margin: 0; }
-    .review-card footer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 5px 15px;
-      margin-top: auto;
-      padding-top: 13px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    .review-card footer strong { color: var(--text); }
-    .site-footer {
-      padding: 33px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .86rem;
-      text-align: center;
-    }
-    @media (max-width: 800px) {
-      .hero-grid, .order-layout { grid-template-columns: 1fr; }
-      .benefit-grid, .offer-grid, .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero { padding: 50px 0; }
-    }
-    @media (max-width: 580px) {
-      .section { padding: 53px 0; }
-      .wrap { width: min(100% - 28px, 1160px); }
-      .benefit-grid, .offer-grid, .results-grid,
-      .tones, .form-grid, #color-fields { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .form-card { padding: 20px; }
-      .header-link { font-size: .78rem; }
-      .result-card img { height: auto; aspect-ratio: auto; }
-      .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
-      .review-card { padding: 20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Corretivo capilar para reduzir visualmente a aparência de falhas e do couro cabeludo aparente. Escolha seu tom e seu kit.">
+<title>Corretivo Capilar | Falha Zero Produtos Capilares</title>
+<style>
+:root{--bg:#faf7f2;--surface:#fff;--soft:#f1e8dd;--text:#241c18;--muted:#665b55;--accent:#8a462c;--accent-dark:#68331f;--line:#e6dcd1;--radius:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:var(--bg);font:16px/1.6 Arial,Helvetica,sans-serif}
+button,input,select{font:inherit}
+img{max-width:100%}
+a{color:inherit}
+[hidden]{display:none!important}
+.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+.section{padding:76px 0}
+.eyebrow{display:block;margin-bottom:12px;color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1,h2,h3{line-height:1.12;letter-spacing:-.035em}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h1{margin:0 0 20px;font-size:clamp(2.6rem,6vw,5.2rem)}
+h2{margin:0 0 17px;font-size:clamp(2.1rem,4vw,3.4rem)}
+h3{margin:0 0 10px;font-size:1.25rem}
+p{margin-top:0}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:13px 24px;border:1px solid var(--accent);border-radius:10px;background:var(--accent);color:#fff;font-weight:800;text-align:center;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--accent-dark);transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ba7a54;outline-offset:3px}
+.btn-outline{background:transparent;color:var(--accent)}
+.btn-outline:hover{color:#fff}
+.site-header{border-bottom:1px solid var(--line);background:rgba(250,247,242,.96)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
+.brand{font-family:Georgia,serif;font-size:1.35rem;font-weight:700;text-decoration:none}
+.brand small{display:block;color:var(--muted);font:700 .68rem Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.header-link{color:var(--accent);font-size:.9rem;font-weight:800;text-decoration:none}
+.hero{padding:76px 0 82px;background:linear-gradient(145deg,#f8f2e9,#eee2d4)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,6vw,80px)}
+.hero-copy>p{max-width:550px;color:#51463f;font-size:1.1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px}
+.hero-facts span{padding:7px 11px;border:1px solid #d8c6b5;border-radius:100px;color:#55453b;font-size:.82rem}
+.video-card{padding:14px;border:1px solid #e0d3c5;border-radius:22px;background:#fff;box-shadow:0 20px 50px #50341d1a}
+.video-card video{display:block;width:100%;max-height:620px;border-radius:12px;background:#191919}
+.video-card p{margin:13px 5px 2px;color:var(--muted);font-size:.85rem;text-align:center}
+.video-card a{color:var(--accent);font-weight:700}
+.vsl-frame{position:relative}
+.vsl-start{position:absolute;inset:0;display:grid;place-items:center;width:100%;border:0;border-radius:12px;background:linear-gradient(180deg,#0000 55%,#0009);color:#fff;font-weight:800;cursor:pointer;text-shadow:0 1px 6px #000}
+.vsl-start:disabled{cursor:progress}
+.vsl-play{display:grid;place-items:center;width:68px;height:68px;padding-left:4px;border-radius:50%;background:#fff;color:var(--accent);font-size:1.6rem;line-height:1;text-shadow:none;box-shadow:0 10px 30px #0007}
+#vsl-status{position:absolute;right:15px;bottom:21px;left:15px;text-align:center}
+.section-heading{max-width:750px;margin:0 auto 35px;text-align:center}
+.benefit-grid,.offer-grid,.results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.benefit-card,.offer-card,.result-card,.form-card{border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.benefit-card{padding:27px}
+.benefit-card p{margin-bottom:0;color:var(--muted)}
+.benefit-number{display:block;margin-bottom:18px;color:var(--accent);font-family:Georgia,serif;font-size:2rem}
+.results-section{background:var(--soft)}
+.result-card{overflow:hidden;margin:0}
+.result-card img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#e6e0d8}
+.result-card figcaption{padding:13px 15px 16px;font-size:.9rem;font-weight:700}
+.results-note{max-width:780px;margin:24px auto 0;color:var(--muted);font-size:.9rem;text-align:center}
+.tones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:28px}
+.tone{display:flex;align-items:center;gap:13px;padding:17px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:700}
+.tone-dot{width:31px;height:31px;flex:0 0 auto;border:1px solid #0002;border-radius:50%}
+.offers-section{background:#eee3d6}
+.offer-card{position:relative;display:flex;flex-direction:column;padding:27px}
+.offer-card.featured{border:2px solid var(--accent)}
+.offer-card.selected{box-shadow:0 0 0 3px #8a462c32}
+.offer-badge{align-self:flex-start;margin-bottom:17px;padding:5px 10px;border-radius:100px;background:var(--accent);color:#fff;font-size:.73rem;font-weight:800;text-transform:uppercase}
+.offer-card h3{font-size:1.45rem}
+.offer-price{margin:10px 0 2px;color:var(--accent-dark);font-size:2.4rem;font-weight:800;line-height:1.1}
+.offer-detail{margin:8px 0 22px;color:var(--muted);font-size:.92rem}
+.offer-card .btn{width:100%;margin-top:auto}
+.order-layout{display:grid;grid-template-columns:minmax(230px,.7fr) minmax(0,1.3fr);align-items:start;gap:28px}
+.order-summary{padding:26px;border-radius:var(--radius);background:#30241f;color:#fff}
+.order-summary p{color:#ddd0c8}
+.order-summary strong{display:block;margin:13px 0;font-size:1.6rem}
+.form-card{padding:29px}
+.form-card fieldset{margin:0 0 25px;padding:0;border:0}
+.form-card legend{margin-bottom:16px;font-size:1.17rem;font-weight:800}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.9rem;font-weight:700}
+.field input,.field select{width:100%;min-height:47px;padding:10px 12px;border:1px solid #bdb1a7;border-radius:8px;background:#fff;color:var(--text)}
+#color-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.form-card .btn{width:100%}
+.form-note{margin:13px 0 0;color:var(--muted);font-size:.86rem}
+.faq{background:#f2ece5}
+.faq-list{max-width:820px;margin:auto}
+.faq-list details{padding:18px 0;border-bottom:1px solid #d8cbc0}
+.faq-list summary{font-weight:800;cursor:pointer}
+.faq-list p{margin:13px 0 0;color:var(--muted)}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.review-card{display:flex;flex-direction:column;gap:16px;min-height:215px;margin:0;padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.review-stars{color:#bb7b20;font-size:1.12rem;letter-spacing:.12em;line-height:1}
+.review-card p{margin:0}
+.review-media{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.review-media.two-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+.review-photo{display:block;aspect-ratio:1;border:1px solid var(--line);border-radius:10px;background-image:var(--review-image);background-size:300% 500%;background-position:var(--photo-position);background-repeat:no-repeat;background-color:#fff}
+.review-card footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:5px 15px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.review-card footer strong{color:var(--text)}
+.site-footer{padding:33px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;text-align:center}
+@media(max-width:800px){.hero-grid,.order-layout{grid-template-columns:1fr}.benefit-grid,.offer-grid,.results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:50px 0}}
+@media(max-width:580px){.section{padding:53px 0}.wrap{width:min(100% - 28px,1160px)}.benefit-grid,.offer-grid,.results-grid,.tones,.form-grid,#color-fields{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:20px}.header-link{font-size:.78rem}.result-card img{height:auto;aspect-ratio:auto}.reviews-grid{grid-template-columns:1fr;gap:16px}.review-card{padding:20px}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#inicio">
-        Falha Zero
-        <small>Produtos Capilares</small>
-      </a>
-      <a class="header-link" href="#ofertas">Ver ofertas</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#inicio">Falha Zero<small>Produtos Capilares</small></a>
+    <a class="header-link" href="#ofertas">Ver ofertas</a>
+  </div>
+</header>
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Corretivo capilar</span>
+        <h1>Falhas no cabelo a mostra? Disfarce o couro cabeludo aparente.</h1>
+        <p>Corretivo capilar de efeito cosmético. Aplique aos poucos, ajuste a cobertura e escolha entre preto, castanho escuro e castanho claro.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#ofertas">Clique aqui para escolher o seu kit</a>
+          <a class="btn btn-outline" href="#antes-depois">Ver comparações</a>
+        </div>
+        <div class="hero-facts"><span>Preto</span><span>Castanho-escuro</span><span>Castanho-claro</span></div>
+      </div>
+      <div class="video-card">
+        <div class="vsl-frame">
+          <video id="vsl-video" width="474" height="854" playsinline preload="none" aria-label="Vídeo de apresentação do corretivo capilar">
+            <source data-src="https://i.imgur.com/cF8Wby9.mp4" type="video/mp4">
+            Seu navegador não conseguiu reproduzir o vídeo.
+          </video>
+          <button id="vsl-start" class="vsl-start" type="button" aria-label="Reproduzir vídeo de apresentação">
+            <span class="vsl-play" aria-hidden="true">▶</span>
+            <span id="vsl-status">Assistir ao vídeo</span>
+          </button>
+        </div>
+        <p>Se o vídeo não carregar, <a href="https://i.imgur.com/cF8Wby9.mp4" target="_blank" rel="noopener noreferrer">abra a VSL diretamente</a>.</p>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Corretivo capilar</span>
-          <h1>Falhas no cabelo a mostra? Disfarce o couro cabeludo aparente.</h1>
-          <p>
-            Corretivo capilar de efeito cosmético. Aplique aos poucos, ajuste a cobertura e escolha entre preto, castanho escuro e castanho claro.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#ofertas">Clique aqui para escolher o seu kit</a>
-            <a class="btn btn-outline" href="#antes-depois">Ver comparações</a>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Como usar</span>
+        <h2>Um acabamento ajustável.</h2>
+        <p class="muted">Aplique aos poucos na área desejada e ajuste a quantidade até chegar ao aspecto visual que você prefere.</p>
+      </div>
+      <div class="benefit-grid">
+        <article class="benefit-card"><span class="benefit-number">01</span><h3>Escolha a cor</h3><p>Selecione o tom mais próximo do seu cabelo.</p></article>
+        <article class="benefit-card"><span class="benefit-number">02</span><h3>Aplique gradualmente</h3><p>Comece com uma pequena quantidade na área em que o couro cabeludo aparece.</p></article>
+        <article class="benefit-card"><span class="benefit-number">03</span><h3>Confira o acabamento</h3><p>Observe em boa iluminação e ajuste a cobertura se necessário.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="avaliacoes" class="section" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Avaliações</span>
+        <h2 id="reviews-title">O que dizem sobre o corretivo.</h2>
+        <p class="muted">Avaliações de clientes com fotos do produto e dos resultados.</p>
+      </div>
+      <div class="reviews-grid">
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>“Produto muito bom, já comprei e testei... não sai fácil. Resultado top demais.”</p>
+          <div class="review-media two-photos" data-review="0"></div>
+          <footer><strong>Tiago P.</strong><span>Preto</span></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>“Muito bom! Adorei. Cobertura: incrível. Benefício do produto: ajuda muito.”</p>
+          <div class="review-media" data-review="1"></div>
+          <footer><strong>Eduardo O.</strong><span>Castanho escuro</span></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>“Muito bom gostei, prático e cobre bem as falhas na cabeça.”</p>
+          <div class="review-media" data-review="2"></div>
+          <footer><strong>Luana S.</strong><span>Preto</span></footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>“Satisfeito! Atendeu minhas expectativas. É exatamente como descrito no site e cumpre o que promete. O material é de boa qualidade, com bom acabamento e cobertura, porém errei no tom da cor do cabelo. Recomendo!”</p>
+          <div class="review-media" data-review="3"></div>
+          <footer><strong>André F.</strong><span>Castanho escuro</span></footer>
+        </blockquote>
+      </div>
+      <p class="muted" style="margin:20px 0 0;text-align:center;font-size:.84rem">Nomes de exibição são pseudônimos. Os textos foram transcritos das avaliações enviadas.</p>
+    </div>
+  </section>
+
+  <section class="section" id="cores">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Tonalidades</span>
+        <h2>Escolha a que combina com você.</h2>
+        <p class="muted">Nos kits, você poderá selecionar a cor de cada unidade.</p>
+      </div>
+      <div class="tones">
+        <div class="tone"><span class="tone-dot" style="background:#171513"></span> Preto</div>
+        <div class="tone"><span class="tone-dot" style="background:#443026"></span> Castanho-escuro</div>
+        <div class="tone"><span class="tone-dot" style="background:#947052"></span> Castanho-claro</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ofertas" class="section offers-section">
+    <div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Ofertas</span><h2>Escolha seu kit.</h2></div>
+      <div class="offer-grid">
+        <article class="offer-card" data-offer-card="individual">
+          <span class="offer-badge">Para experimentar</span><h3>1 unidade</h3>
+          <p class="offer-price">R$ 27,90</p><p class="offer-detail">Você recebe 1 corretivo capilar.</p>
+          <button type="button" class="btn" data-select-kit="individual">Escolher 1 unidade</button>
+        </article>
+        <article class="offer-card featured selected" data-offer-card="kit3">
+          <span class="offer-badge">Mais escolhido</span><h3>Compre 2, leve 1 grátis</h3>
+          <p class="offer-price">R$ 57,90</p><p class="offer-detail">Você recebe 3 unidades no total.</p>
+          <button type="button" class="btn" data-select-kit="kit3">Escolher 3 unidades</button>
+        </article>
+        <article class="offer-card" data-offer-card="kit5">
+          <span class="offer-badge">Maior kit</span><h3>Compre 3, leve 2 grátis</h3>
+          <p class="offer-price">R$ 87,90</p><p class="offer-detail">Você recebe 5 unidades no total.</p>
+          <button type="button" class="btn" data-select-kit="kit5">Escolher 5 unidades</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pedido" class="section">
+    <div class="wrap order-layout">
+      <div class="order-summary">
+        <span class="eyebrow" style="color:#e8ad86">Seu pedido</span>
+        <h2 style="font-size:2rem">Confira antes de continuar.</h2>
+        <strong id="selected-kit-name">3 unidades · R$ 57,90</strong>
+        <p>Escolha as cores e preencha o endereço.</p>
+      </div>
+      <form id="order-form" class="form-card">
+        <fieldset><legend>Cor de cada unidade</legend><div id="color-fields"></div></fieldset>
+        <fieldset>
+          <legend>Endereço de entrega</legend>
+          <div class="form-grid">
+            <div class="field"><label for="cep">CEP</label><input id="cep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" required></div>
+            <div class="field"><label for="numero">Número</label><input id="numero" name="numero" type="text" autocomplete="address-line2" required></div>
+            <div class="field full"><label for="rua">Rua ou avenida</label><input id="rua" name="rua" type="text" autocomplete="address-line1" required></div>
+            <div class="field"><label for="bairro">Bairro</label><input id="bairro" name="bairro" type="text" required></div>
+            <div class="field"><label for="complemento">Complemento (opcional)</label><input id="complemento" name="complemento" type="text"></div>
+            <div class="field"><label for="cidade">Cidade</label><input id="cidade" name="cidade" type="text" autocomplete="address-level2" required></div>
+            <div class="field"><label for="estado">Estado (sigla)</label><input id="estado" name="estado" type="text" autocomplete="address-level1" placeholder="SP" minlength="2" maxlength="2" pattern="[A-Za-z]{2}" required></div>
           </div>
-          <div class="hero-facts">
-            <span>Preto</span>
-            <span>Castanho-escuro</span>
-            <span>Castanho-claro</span>
-          </div>
-        </div>
+        </fieldset>
+        <button type="submit" class="btn">Continuar para o checkout</button>
+        <p class="form-note">Este formulário confere os dados nesta página. O endereço e as cores <strong>não são enviados automaticamente</strong></p>
+      </form>
+    </div>
+  </section>
 
-        <div class="video-card">
-          <div class="vsl-frame">
-            <video id="vsl-video" width="474" height="854" playsinline preload="none"
-                   poster="data:image/webp;base64,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"
-                   aria-label="Vídeo de apresentação do corretivo capilar">
-              <source data-src="https://i.imgur.com/cF8Wby9.mp4" type="video/mp4">
-              Seu navegador não conseguiu reproduzir o vídeo.
-            </video>
-            <button id="vsl-start" class="vsl-start" type="button" aria-label="Reproduzir vídeo de apresentação">
-              <span class="vsl-play" aria-hidden="true">▶</span>
-              <span id="vsl-status">Assistir ao vídeo</span>
-            </button>
-          </div>
-          <p>
-            Se o vídeo não carregar,
-            <a href="https://i.imgur.com/cF8Wby9.mp4" target="_blank" rel="noopener noreferrer">abra a VSL diretamente</a>.
-          </p>
-        </div>
+  <section class="section faq">
+    <div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Dúvidas frequentes</span><h2>Antes de comprar.</h2></div>
+      <div class="faq-list">
+        <details><summary>O corretivo faz crescer cabelo?</summary><p>Não. O efeito é cosmético: ele reduz visualmente o contraste do couro cabeludo aparente.</p></details>
+        <details><summary>Posso escolher cores diferentes no mesmo kit?</summary><p>Você pode marcar uma cor para cada unidade nesta página. Confirme as opções disponíveis no checkout antes de concluir a compra.</p></details>
+        <details><summary>Como vejo frete e prazo de entrega?</summary><p>Frete gratis para todo o Brasil.</p></details>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Como usar</span>
-          <h2>Um acabamento ajustável.</h2>
-          <p class="muted">
-            Aplique aos poucos na área desejada e ajuste a quantidade até chegar
-            ao aspecto visual que você prefere.
-          </p>
-        </div>
-        <div class="benefit-grid">
-          <article class="benefit-card">
-            <span class="benefit-number">01</span>
-            <h3>Escolha a cor</h3>
-            <p>Selecione o tom mais próximo do seu cabelo.</p>
-          </article>
-          <article class="benefit-card">
-            <span class="benefit-number">02</span>
-            <h3>Aplique gradualmente</h3>
-            <p>Comece com uma pequena quantidade na área em que o couro cabeludo aparece.</p>
-          </article>
-          <article class="benefit-card">
-            <span class="benefit-number">03</span>
-            <h3>Confira o acabamento</h3>
-            <p>Observe em boa iluminação e ajuste a cobertura se necessário.</p>
-          </article>
-        </div>
+  <section id="antes-depois" class="section results-section">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Cobertura visual</span><h2>Comparações de antes e depois.</h2>
+        <p class="muted">Três exemplos masculinos e três femininos.</p>
       </div>
-    </section>
-
-    <section id="avaliacoes" class="section" aria-labelledby="reviews-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Avaliações</span>
-          <h2 id="reviews-title">O que dizem sobre o corretivo.</h2>
-          <p class="muted">Avaliações apresentadas em texto para facilitar a leitura.</p>
-        </div>
-        <div class="reviews-grid">
-          <blockquote class="review-card">
-            <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>“Produto muito bom, já comprei e testei... não sai fácil. Resultado top demais.”</p>
-            <footer><strong>Tiago P.</strong><span>Preto</span></footer>
-          </blockquote>
-          <blockquote class="review-card">
-            <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>“Muito bom! Adorei. Cobertura: incrível. Benefício do produto: ajuda muito.”</p>
-            <footer><strong>Eduardo O.</strong><span>Castanho escuro</span></footer>
-          </blockquote>
-          <blockquote class="review-card">
-            <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>“Muito bom gostei, prático e cobre bem as falhas na cabeça.”</p>
-            <footer><strong>Luana S.</strong><span>Preto</span></footer>
-          </blockquote>
-          <blockquote class="review-card">
-            <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>“Satisfeito! Atendeu minhas expectativas. É exatamente como descrito no site e cumpre o que promete. O material é de boa qualidade, com bom acabamento e cobertura, porém errei no tom da cor do cabelo. Recomendo!”</p>
-            <footer><strong>André F.</strong><span>Castanho escuro</span></footer>
-          </blockquote>
-        </div>
-        <p class="muted" style="margin:20px 0 0;text-align:center;font-size:.84rem">
-          Nomes de exibição são pseudônimos. Os textos foram transcritos das avaliações enviadas.
-        </p>
+      <div class="results-grid">
+        <figure class="result-card"><img src="https://i.imgur.com/1OYjbvx.jpeg" alt="Comparação masculina de cobertura capilar, exemplo 1" loading="lazy"><figcaption>Masculino</figcaption></figure>
+        <figure class="result-card"><img src="https://i.imgur.com/iVp7Vl4.jpeg" alt="Comparação masculina de cobertura capilar, exemplo 2" loading="lazy"><figcaption>Masculino</figcaption></figure>
+        <figure class="result-card"><img src="https://i.imgur.com/5cSdXVG.jpeg" alt="Comparação masculina de cobertura capilar, exemplo 3" loading="lazy"><figcaption>Masculino</figcaption></figure>
+        <figure class="result-card"><img src="https://i.imgur.com/iHsZWkf.jpeg" alt="Comparação feminina de cobertura capilar, exemplo 1" loading="lazy"><figcaption>Feminino</figcaption></figure>
+        <figure class="result-card"><img src="https://i.imgur.com/Dx1bd6p.jpeg" alt="Comparação feminina de cobertura capilar, exemplo 2" loading="lazy"><figcaption>Feminino</figcaption></figure>
+        <figure class="result-card"><img src="https://i.imgur.com/ftXBMYU.jpeg" alt="Comparação feminina de cobertura capilar, exemplo 3" loading="lazy"><figcaption>Feminino</figcaption></figure>
       </div>
-    </section>
+      <p class="results-note">Imagens reais de clientes que ja testaram e aprovaram.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap">Falha Zero Produtos Capilares · Produto: Corretivo Capilar</div></footer>
+<script>
+const OFFERS={
+  individual:{name:"1 unidade · R$ 27,90",quantity:1,checkout:"https://pagseguropix.org/c/corretivo-capilar-indi"},
+  kit3:{name:"3 unidades · R$ 57,90",quantity:3,checkout:"https://pagseguropix.org/c/compre-dois-leve-um-gratis"},
+  kit5:{name:"5 unidades · R$ 87,90",quantity:5,checkout:"https://pagseguropix.org/c/oferta-compre-3-e-leve-2-gratis"}
+};
+let selectedKit="kit3";
+const colorFields=document.getElementById("color-fields");
+const kitName=document.getElementById("selected-kit-name");
+const form=document.getElementById("order-form");
+const cep=document.getElementById("cep");
 
-    <section class="section" id="cores">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Tonalidades</span>
-          <h2>Escolha a que combina com você.</h2>
-          <p class="muted">Nos kits, você poderá selecionar a cor de cada unidade.</p>
-        </div>
-        <div class="tones">
-          <div class="tone"><span class="tone-dot" style="background:#171513"></span> Preto</div>
-          <div class="tone"><span class="tone-dot" style="background:#443026"></span> Castanho-escuro</div>
-          <div class="tone"><span class="tone-dot" style="background:#947052"></span> Castanho-claro</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ofertas" class="section offers-section">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Ofertas</span>
-          <h2>Escolha seu kit.</h2>
-        </div>
-        <div class="offer-grid">
-          <article class="offer-card" data-offer-card="individual">
-            <span class="offer-badge">Para experimentar</span>
-            <h3>1 unidade</h3>
-            <p class="offer-price">R$ 27,90</p>
-            <p class="offer-detail">Você recebe 1 corretivo capilar.</p>
-            <button type="button" class="btn" data-select-kit="individual">Escolher 1 unidade</button>
-          </article>
-          <article class="offer-card featured selected" data-offer-card="kit3">
-            <span class="offer-badge">Mais escolhido</span>
-            <h3>Compre 2, leve 1 grátis</h3>
-            <p class="offer-price">R$ 57,90</p>
-            <p class="offer-detail">Você recebe 3 unidades no total.</p>
-            <button type="button" class="btn" data-select-kit="kit3">Escolher 3 unidades</button>
-          </article>
-          <article class="offer-card" data-offer-card="kit5">
-            <span class="offer-badge">Maior kit</span>
-            <h3>Compre 3, leve 2 grátis</h3>
-            <p class="offer-price">R$ 87,90</p>
-            <p class="offer-detail">Você recebe 5 unidades no total.</p>
-            <button type="button" class="btn" data-select-kit="kit5">Escolher 5 unidades</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pedido" class="section">
-      <div class="wrap order-layout">
-        <div class="order-summary">
-          <span class="eyebrow" style="color:#e8ad86">Seu pedido</span>
-          <h2 style="font-size:2rem">Confira antes de continuar.</h2>
-          <strong id="selected-kit-name">3 unidades · R$ 57,90</strong>
-          <p>Escolha as cores e preencha o endereço.</p>
-        </div>
-        <form id="order-form" class="form-card">
-          <fieldset>
-            <legend>Cor de cada unidade</legend>
-            <div id="color-fields"></div>
-          </fieldset>
-          <fieldset>
-            <legend>Endereço de entrega</legend>
-            <div class="form-grid">
-              <div class="field">
-                <label for="cep">CEP</label>
-                <input id="cep" name="cep" type="text" inputmode="numeric"
-                       autocomplete="postal-code" placeholder="00000-000"
-                       maxlength="9" pattern="[0-9]{5}-[0-9]{3}" required>
-              </div>
-              <div class="field">
-                <label for="numero">Número</label>
-                <input id="numero" name="numero" type="text" autocomplete="address-line2" required>
-              </div>
-              <div class="field full">
-                <label for="rua">Rua ou avenida</label>
-                <input id="rua" name="rua" type="text" autocomplete="address-line1" required>
-              </div>
-              <div class="field">
-                <label for="bairro">Bairro</label>
-                <input id="bairro" name="bairro" type="text" required>
-              </div>
-              <div class="field">
-                <label for="complemento">Complemento (opcional)</label>
-                <input id="complemento" name="complemento" type="text">
-              </div>
-              <div class="field">
-                <label for="cidade">Cidade</label>
-                <input id="cidade" name="cidade" type="text" autocomplete="address-level2" required>
-              </div>
-              <div class="field">
-                <label for="estado">Estado (sigla)</label>
-                <input id="estado" name="estado" type="text" autocomplete="address-level1"
-                       placeholder="SP" minlength="2" maxlength="2" pattern="[A-Za-z]{2}" required>
-              </div>
-            </div>
-          </fieldset>
-          <button type="submit" class="btn">Continuar para o checkout</button>
-          <p class="form-note">
-            Este formulário confere os dados nesta página. O endereço e as cores
-            <strong>não são enviados automaticamente</strong>
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <section class="section faq">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Dúvidas frequentes</span>
-          <h2>Antes de comprar.</h2>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>O corretivo faz crescer cabelo?</summary>
-            <p>Não. O efeito é cosmético: ele reduz visualmente o contraste do couro cabeludo aparente.</p>
-          </details>
-          <details>
-            <summary>Posso escolher cores diferentes no mesmo kit?</summary>
-            <p>Você pode marcar uma cor para cada unidade nesta página. Confirme as opções disponíveis no checkout antes de concluir a compra.</p>
-          </details>
-          <details>
-            <summary>Como vejo frete e prazo de entrega?</summary>
-            <p>Frete gratis para todo o Brasil.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="antes-depois" class="section results-section">
-      <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Cobertura visual</span>
-          <h2>Comparações de antes e depois.</h2>
-          <p class="muted">Três exemplos masculinos e três femininos.</p>
-        </div>
-        <div class="results-grid">
-          <figure class="result-card">
-            <img src="https://i.imgur.com/1OYjbvx.jpeg"
-                 alt="Comparação masculina de cobertura capilar, exemplo 1" loading="lazy">
-            <figcaption>Masculino</figcaption>
-          </figure>
-          <figure class="result-card">
-            <img src="https://i.imgur.com/iVp7Vl4.jpeg"
-                 alt="Comparação masculina de cobertura capilar, exemplo 2" loading="lazy">
-            <figcaption>Masculino</figcaption>
-          </figure>
-          <figure class="result-card">
-            <img src="https://i.imgur.com/5cSdXVG.jpeg"
-                 alt="Comparação masculina de cobertura capilar, exemplo 3" loading="lazy">
-            <figcaption>Masculino</figcaption>
-          </figure>
-          <figure class="result-card">
-            <img src="https://i.imgur.com/iHsZWkf.jpeg"
-                 alt="Comparação feminina de cobertura capilar, exemplo 1" loading="lazy">
-            <figcaption>Feminino</figcaption>
-          </figure>
-          <figure class="result-card">
-            <img src="https://i.imgur.com/Dx1bd6p.jpeg"
-                 alt="Comparação feminina de cobertura capilar, exemplo 2" loading="lazy">
-            <figcaption>Feminino</figcaption>
-          </figure>
-          <figure class="result-card">
-            <img src="https://i.imgur.com/ftXBMYU.jpeg"
-                 alt="Comparação feminina de cobertura capilar, exemplo 3" loading="lazy">
-            <figcaption>Feminino</figcaption>
-          </figure>
-        </div>
-        <p class="results-note">Imagens reais de clientes que ja testaram e aprovaram.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">Falha Zero Produtos Capilares · Produto: Corretivo Capilar</div>
-  </footer>
-
-  <script>
-    const OFFERS = {
-      individual: {
-        name: "1 unidade · R$ 27,90",
-        quantity: 1,
-        checkout: "https://pagseguropix.org/c/corretivo-capilar-indi"
-      },
-      kit3: {
-        name: "3 unidades · R$ 57,90",
-        quantity: 3,
-        checkout: "https://pagseguropix.org/c/compre-dois-leve-um-gratis"
-      },
-      kit5: {
-        name: "5 unidades · R$ 87,90",
-        quantity: 5,
-        checkout: "https://pagseguropix.org/c/oferta-compre-3-e-leve-2-gratis"
-      }
-    };
-
-    let selectedKit = "kit3";
-    const colorFields = document.getElementById("color-fields");
-    const kitName = document.getElementById("selected-kit-name");
-    const form = document.getElementById("order-form");
-    const cep = document.getElementById("cep");
-
-    function renderColors(quantity) {
-      colorFields.replaceChildren();
-      for (let i = 1; i <= quantity; i++) {
-        const field = document.createElement("div");
-        field.className = "field";
-        const label = document.createElement("label");
-        label.htmlFor = `cor-${i}`;
-        label.textContent = `Cor da unidade ${i}`;
-        const select = document.createElement("select");
-        select.id = `cor-${i}`;
-        select.name = `cor-${i}`;
-        select.required = true;
-        [
-          ["", "Selecione a cor"],
-          ["preto", "Preto"],
-          ["castanho-escuro", "Castanho-escuro"],
-          ["castanho-claro", "Castanho-claro"]
-        ].forEach(([value, text]) => {
-          const option = document.createElement("option");
-          option.value = value;
-          option.textContent = text;
-          select.appendChild(option);
-        });
-        field.append(label, select);
-        colorFields.appendChild(field);
-      }
-    }
-
-    function chooseKit(id, scrollToForm = false) {
-      if (!Object.hasOwn(OFFERS, id)) return;
-      selectedKit = id;
-      kitName.textContent = OFFERS[id].name;
-      renderColors(OFFERS[id].quantity);
-      document.querySelectorAll("[data-offer-card]").forEach(card => {
-        card.classList.toggle("selected", card.dataset.offerCard === id);
+function renderColors(quantity){
+  colorFields.replaceChildren();
+  for(let i=1;i<=quantity;i++){
+    const field=document.createElement("div");
+    field.className="field";
+    const label=document.createElement("label");
+    label.htmlFor=`cor-${i}`;
+    label.textContent=`Cor da unidade ${i}`;
+    const select=document.createElement("select");
+    select.id=`cor-${i}`;
+    select.name=`cor-${i}`;
+    select.required=true;
+    [["","Selecione a cor"],["preto","Preto"],["castanho-escuro","Castanho-escuro"],["castanho-claro","Castanho-claro"]]
+      .forEach(([value,text])=>{
+        const option=document.createElement("option");
+        option.value=value;
+        option.textContent=text;
+        select.appendChild(option);
       });
-      if (scrollToForm) {
-        document.getElementById("pedido").scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    }
+    field.append(label,select);
+    colorFields.appendChild(field);
+  }
+}
+function chooseKit(id,scrollToForm=false){
+  if(!Object.hasOwn(OFFERS,id))return;
+  selectedKit=id;
+  kitName.textContent=OFFERS[id].name;
+  renderColors(OFFERS[id].quantity);
+  document.querySelectorAll("[data-offer-card]").forEach(card=>{
+    card.classList.toggle("selected",card.dataset.offerCard===id);
+  });
+  if(scrollToForm)document.getElementById("pedido").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.querySelectorAll("[data-select-kit]").forEach(button=>{
+  button.addEventListener("click",()=>chooseKit(button.dataset.selectKit,true));
+});
+cep.addEventListener("input",()=>{
+  const digits=cep.value.replace(/\D/g,"").slice(0,8);
+  cep.value=digits.length>5?`${digits.slice(0,5)}-${digits.slice(5)}`:digits;
+});
+document.getElementById("estado").addEventListener("input",event=>{
+  event.target.value=event.target.value.replace(/[^a-zA-Z]/g,"").slice(0,2).toUpperCase();
+});
+form.addEventListener("submit",event=>{
+  event.preventDefault();
+  if(!form.reportValidity())return;
+  const target=new URL(OFFERS[selectedKit].checkout);
+  if(target.protocol!=="https:"){alert("Não foi possível abrir o checkout.");return}
+  window.location.assign(target.href);
+});
+const vslVideo=document.getElementById("vsl-video");
+const vslSource=vslVideo.querySelector("source");
+const vslStart=document.getElementById("vsl-start");
+const vslStatus=document.getElementById("vsl-status");
+vslStart.addEventListener("click",async()=>{
+  vslStart.disabled=true;
+  vslStatus.textContent="Carregando vídeo...";
+  if(!vslSource.src)vslSource.src=vslSource.dataset.src;
+  vslVideo.load();
+  try{await vslVideo.play()}
+  catch(error){vslStatus.textContent="Não foi possível carregar. Tente novamente.";vslStart.disabled=false}
+});
+vslVideo.addEventListener("playing",()=>{
+  vslStart.hidden=true;
+  vslVideo.controls=true;
+});
+chooseKit("kit3");
 
-    document.querySelectorAll("[data-select-kit]").forEach(button => {
-      button.addEventListener("click", () => {
-        chooseKit(button.dataset.selectKit, true);
-      });
-    });
-
-    cep.addEventListener("input", () => {
-      const digits = cep.value.replace(/\D/g, "").slice(0, 8);
-      cep.value = digits.length > 5
-        ? `${digits.slice(0, 5)}-${digits.slice(5)}`
-        : digits;
-    });
-
-    document.getElementById("estado").addEventListener("input", event => {
-      event.target.value = event.target.value
-        .replace(/[^a-zA-Z]/g, "")
-        .slice(0, 2)
-        .toUpperCase();
-    });
-
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      const checkout = OFFERS[selectedKit].checkout;
-      const target = new URL(checkout);
-      if (target.protocol !== "https:") {
-        alert("Não foi possível abrir o checkout.");
-        return;
-      }
-      window.location.assign(target.href);
-    });
-
-    const vslVideo = document.getElementById("vsl-video");
-    const vslSource = vslVideo.querySelector("source");
-    const vslStart = document.getElementById("vsl-start");
-    const vslStatus = document.getElementById("vsl-status");
-
-    vslStart.addEventListener("click", async () => {
-      vslStart.disabled = true;
-      vslStatus.textContent = "Carregando vídeo...";
-      if (!vslSource.src) vslSource.src = vslSource.dataset.src;
-      vslVideo.load();
-      try {
-        await vslVideo.play();
-      } catch (error) {
-        vslStatus.textContent = "Não foi possível carregar. Tente novamente.";
-        vslStart.disabled = false;
-      }
-    });
-
-    vslVideo.addEventListener("playing", () => {
-      vslStart.hidden = true;
-      vslVideo.controls = true;
-    });
-
-    chooseKit("kit3");
-  </script>
+/* Fotos das avaliações incorporadas ao próprio HTML. */
+const fotos=[
+  ["https://i.imgur.com/DMBkoVw.jpeg","https://i.imgur.com/FeXtGo8.jpeg"],
+  ["https://i.imgur.com/CydcN25.jpeg","https://i.imgur.com/UTxfLTN.jpeg"],
+  ["https://i.imgur.com/DMBkoVw.jpeg","https://i.imgur.com/FeXtGo8.jpeg"],
+  ["https://i.imgur.com/CydcN25.jpeg","https://i.imgur.com/UTxfLTN.jpeg"]
+];
+document.querySelectorAll(".review-media").forEach((gallery,index)=>{
+  fotos[index].forEach((url,photoIndex)=>{
+    const img=document.createElement("img");
+    img.src=url;
+    img.alt=`Foto enviada na avaliação ${index+1}, imagem ${photoIndex+1}`;
+    img.loading="lazy";
+    img.style.cssText="width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid #e6dcd1";
+    gallery.appendChild(img);
+  });
+});
+</script>
 </body>
 </html>
